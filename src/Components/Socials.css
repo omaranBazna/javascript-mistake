@@ -1,0 +1,14 @@
+.socials{
+  
+    font-size:32px;
+  
+  }
+  .socials a{
+    color:inherit;
+    text-decoration: none;
+    color:rgb(213, 213, 213);
+    margin:20px;
+  }
+  .socials a:hover{
+    color:white;
+  }

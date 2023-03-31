@@ -1,0 +1,27 @@
+.header-el{
+    width:100%;
+    padding:10px;
+    padding-left:30px;
+    color:white;
+    background-color: black;
+  }
+  .header-el h1{
+    animation: headerSlide 1s ease 0s 1 normal forwards;
+  }
+  .header-el h2{
+    transform:translateX(-450px);
+    animation: headerSlide 1s ease 0.8s 1 normal forwards;
+  }
+  
+  @keyframes headerSlide {
+      0% {
+          opacity: 0;
+          transform: translateX(-450px);
+      }
+  
+      100% {
+          opacity: 1;
+          transform: translateX(0);
+      }
+  }
+  
