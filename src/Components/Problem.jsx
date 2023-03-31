@@ -6,11 +6,20 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import { useState } from "react";
 function Problem({index,fontSize,setFontSize,item,value ,setValue}){
-  
+      if(!item){
+        return <h1>Problem missing</h1>
+      }
     const handleChange = (val) => setValue(val);
     return(<div>
       <div style={{display:"flex",justifyContent:"space-between",alignItems:"center", width:"80%",margin:"auto"}}>
-        <h3 className="m-4">{index+1}.{item.title}</h3>  
+        <div className="problem-header"><h3 className="m-4">{index+1}.{item.title}</h3> 
+        {item.tags && item.tags.length>0 && item.tags.map(val=>{
+           return <div className="tag">{val}</div>
+        })}
+        </div>
+
+
+
         <div style={{display:"flex",gap:"4px",justifyContent:"center",alignItems:"center"}}>
 
      

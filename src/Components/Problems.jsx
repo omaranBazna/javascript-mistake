@@ -23,16 +23,16 @@ function Problems(){
               {console.log(index)}
               <Problem setFontSize={setFontSize} fontSize={fontSize} value={value} setValue={setValue} index={index}  item={problemsArr[index]} />
             
-                <Container className="m-4" fluid> 
+                <Container style={{width:"80%"}} className="mx-auto m-4" fluid> 
                     <Row>
                         <Col className="col-2">
                             {index>0 &&
-        <Button className="mx-auto" onClick={previousPage}>Previous</Button>}</Col>
+        <Button className="ml-auto" onClick={previousPage}>Previous</Button>}</Col>
         <Col className="col-8">
         </Col>
         <Col className="col-2 ">
             {index<problemsArr.length-1 &&
-         <Button className="mx-auto" onClick={nextPage}>Next</Button>
+         <Button className="mr-auto" onClick={nextPage}>Next</Button>
             }
       </Col> </Row>  </Container>
         

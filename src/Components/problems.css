@@ -1,0 +1,16 @@
+.problem-header{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    gap:10px;
+}
+.tag{
+    padding:8px;
+    background-color:rgb(216, 216, 216);
+    border-radius:6px;
+    cursor:pointer;
+
+}
+.tag:hover{
+    background-color:rgb(228, 228, 228);
+}
