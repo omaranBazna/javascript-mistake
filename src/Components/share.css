@@ -1,9 +1,15 @@
 .share{
     cursor:pointer;
+    color:rgb(200,210,220);
+}
+.share:hover{
+    color:white;
 }
 .share-c{
     display:flex;
     align-items: center;
     justify-content: center;
     width: fit-content;
+    gap:10px;
+    font-size:20px;
 }

@@ -1,17 +1,52 @@
 import "./share.css"
 import { LinkedinShareButton,LinkedinIcon} from "react-share"
 function Share(){
+    function fallbackCopyTextToClipboard(text) {
+        var textArea = document.createElement("textarea");
+        textArea.value = text;
+        
+        // Avoid scrolling to bottom
+        textArea.style.top = "0";
+        textArea.style.left = "0";
+        textArea.style.position = "fixed";
+      
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+      
+        try {
+          var successful = document.execCommand('copy');
+          var msg = successful ? 'successful' : 'unsuccessful';
+          console.log('Fallback: Copying text command was ' + msg);
+        } catch (err) {
+          console.error('Fallback: Oops, unable to copy', err);
+        }
+      
+        document.body.removeChild(textArea);
+      }
+      function copyTextToClipboard(text) {
+        if (!navigator.clipboard) {
+          fallbackCopyTextToClipboard(text);
+          return;
+        }
+        navigator.clipboard.writeText(text).then(function() {
+          console.log('Async: Copying to clipboard was successful!');
+        }, function(err) {
+          console.error('Async: Could not copy text: ', err);
+        });
+      }
+
+
 
     return(
         <div className="share-c">
-        <i  className="share fa-solid fa-share-nodes">
-          
+        <i  className=" fa-solid fa-share-nodes"></i>
+        <i onClick={()=>{copyTextToClipboard(window.location.href)}} className="share fas fa-copy"></i>
 
-        </i>
         <div className="Demo__some-network">
        
           <LinkedinShareButton url={window.location.href} className="Demo__some-network__share-button">
-            <LinkedinIcon size={42} round />
+            <LinkedinIcon size={30} round />
           </LinkedinShareButton>
         </div>
 
