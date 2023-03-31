@@ -13,7 +13,7 @@ function Problem({item}){
      language={"javascript"}
     value={item.code}
     theme="vs-dark"
-    onChange={null}
+    options={{readOnly:true}}
    /></div>
     </div>)
 }
