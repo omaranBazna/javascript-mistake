@@ -49,6 +49,17 @@ function Problem({index,fontSize,setFontSize,item,value ,setValue}){
     theme={value==1?"vs-light":"vs-dark"}
     options={{readOnly:true,fontSize:fontSize}}
    /></div>
+
+   <div  style={{width:"80%",margin:"auto"}}>
+    <h3 className="m-3">Error message</h3>
+    <p style={{padding:"15px",border:"2px solid rgb(200,200,200)",borderRadius:"5px"}}>{item.error}</p>
+   </div>
+
+   <div  style={{width:"80%",margin:"auto"}}>
+    <h3 className="m-3">Explanation</h3>
+    <p style={{padding:"15px",border:"2px solid rgb(200,200,200)",borderRadius:"5px"}}>{item.explanation}</p>
+   </div>
+
     </div>)
 }
 
