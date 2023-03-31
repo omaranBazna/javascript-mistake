@@ -9,14 +9,14 @@
     animation: headerSlide 1s ease 0s 1 normal forwards;
   }
   .header-el h2{
-    transform:translateX(-450px);
+    transform:translateX(-600px);
     animation: headerSlide 1s ease 0.8s 1 normal forwards;
   }
   
   @keyframes headerSlide {
       0% {
           opacity: 0;
-          transform: translateX(-450px);
+          transform: translateX(-600px);
       }
   
       100% {
