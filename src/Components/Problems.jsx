@@ -25,14 +25,14 @@ function Problems(){
             
                 <Container style={{width:"87%"}} className="mx-auto m-4" fluid> 
                     <Row>
-                        <Col className="col-2">
+                        <Col sm={6} md={4}>
                             {index>0 &&
-        <Button className="ml-auto" onClick={previousPage}>Previous</Button>}</Col>
-        <Col className="col-8">
+        <Button style={{width:"100%"}} className="ml-auto" onClick={previousPage}>Previous</Button>}</Col>
+        <Col sm={0} md={4}>
         </Col>
-        <Col className="col-2 ">
+        <Col sm={6} md={4}>
             {index<problemsArr.length-1 &&
-         <Button className="mr-auto" onClick={nextPage}>Next</Button>
+         <Button style={{width:"100%"}} className="mr-auto" onClick={nextPage}>Next</Button>
             }
       </Col> </Row>  </Container>
         
