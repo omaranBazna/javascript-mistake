@@ -12,14 +12,14 @@ function Problem({index,fontSize,setFontSize,item,value ,setValue}){
     const handleChange = (val) => setValue(val);
     return(<div>
 
-        <h3 style={{width:"80%"}} className="m-4 mx-auto">{index+1}.{item.title}</h3> 
-        <div style={{width:"80%"}}> <div style={{gap:"15px",display:"flex",justifyContent:"flex-start",alignItems:"center", width:"80%",margin:"auto"}}>
+        <h3 style={{width:"87%"}} className="m-4 mx-auto">{index+1}.{item.title}</h3> 
+        <div style={{width:"87%"}}> <div style={{gap:"15px",display:"flex",justifyContent:"flex-start",alignItems:"center", width:"87%",margin:"auto"}}>
         
         {item.tags && item.tags.length>0 && item.tags.map((val,index)=>{
            return <div key={index} className="tag">{val}</div>
         })}
         </div></div>
-        <div className="problem-header mx-auto" style={{width:"80%",display:"flex",gap:"4px",justifyContent:"flex-end",alignItems:"center"}}>
+        <div className="problem-header mx-auto" style={{width:"87%",display:"flex",gap:"4px",justifyContent:"flex-end",alignItems:"center"}}>
      
 
 
@@ -46,7 +46,7 @@ function Problem({index,fontSize,setFontSize,item,value ,setValue}){
     </div>
         
       </div>  
-    <div style={{borderRadius:"5px",overflow:"hidden", border:"2px solid rgb(173, 173, 173)",width:"80%",margin:"auto"}}>
+    <div style={{borderRadius:"5px",overflow:"hidden", border:"2px solid rgb(173, 173, 173)",width:"87%",margin:"auto"}}>
  
   <Editor
      style={{border:"4px solid grey"}}
@@ -61,12 +61,12 @@ function Problem({index,fontSize,setFontSize,item,value ,setValue}){
     options={{readOnly:true,fontSize:fontSize}}
    /></div>
 
-   <div  style={{width:"80%",margin:"auto"}}>
+   <div  style={{width:"87%",margin:"auto"}}>
     <h3 className="m-3">Error message</h3>
     <p style={{padding:"15px",border:"2px solid rgb(200,200,200)",borderRadius:"5px"}}>{item.error}</p>
    </div>
 
-   <div  style={{width:"80%",margin:"auto"}}>
+   <div  style={{width:"87%",margin:"auto"}}>
     <h3 className="m-3">Explanation</h3>
     <p style={{padding:"15px",border:"2px solid rgb(200,200,200)",borderRadius:"5px"}}>{item.explanation}</p>
    </div>

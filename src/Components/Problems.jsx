@@ -23,7 +23,7 @@ function Problems(){
              
               <Problem setFontSize={setFontSize} fontSize={fontSize} value={value} setValue={setValue} index={index}  item={problemsArr[index]} />
             
-                <Container style={{width:"80%"}} className="mx-auto m-4" fluid> 
+                <Container style={{width:"87%"}} className="mx-auto m-4" fluid> 
                     <Row>
                         <Col className="col-2">
                             {index>0 &&
