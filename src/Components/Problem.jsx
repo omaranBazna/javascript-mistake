@@ -11,8 +11,9 @@ function Problem({index,fontSize,setFontSize,item,value ,setValue}){
       }
     const handleChange = (val) => setValue(val);
     return(<div>
-      <div style={{display:"flex",justifyContent:"space-between",alignItems:"center", width:"80%",margin:"auto"}}>
         <div className="problem-header"><h3 className="m-4">{index+1}.{item.title}</h3> 
+      <div style={{display:"flex",justifyContent:"space-between",alignItems:"center", width:"80%",margin:"auto"}}>
+        
         {item.tags && item.tags.length>0 && item.tags.map(val=>{
            return <div className="tag">{val}</div>
         })}
@@ -48,7 +49,7 @@ function Problem({index,fontSize,setFontSize,item,value ,setValue}){
  
   <Editor
      style={{border:"4px solid grey"}}
-     height="100px"
+     height="180px"
      width="100%"
      
      defaultLanguage="javascript"
