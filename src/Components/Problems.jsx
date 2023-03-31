@@ -19,7 +19,7 @@ function Problems(){
          }
     }
     return(
-        <div className="problems">
+        <div className="problems" style={{marginBottom:"130px"}}>
              
               <Problem setFontSize={setFontSize} fontSize={fontSize} value={value} setValue={setValue} index={index}  item={problemsArr[index]} />
             
