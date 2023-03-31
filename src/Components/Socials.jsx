@@ -4,20 +4,19 @@ return (
     <div className="socials">
 
         <a 
-    href="#" onclick='window.open("https://www.linkedin.com/in/omaran-bazna-64234b102/");return false;'
-    > <i class="fa-brands fa-linkedin-in"></i></a>
+    href="#" onClick={()=>{window.open("https://www.linkedin.com/in/omaran-bazna-64234b102/");return false;}}> <i className="fa-brands fa-linkedin-in"></i></a>
 
     <a 
       
-        href="#" onclick='window.open("https://github.com/omaranBazna");return false;'
+        href="#" onClick={()=>{window.open("https://github.com/omaranBazna");return false;}}
       >
-<i class="fa-brands fa-github" 
+<i className="fa-brands fa-github" 
   
   ></i>
     </a>
 
     <a href="mailto:omran4d@gmail.com" >
-      <i class="fa fa-envelope" aria-hidden="true"></i>
+      <i className="fa fa-envelope" aria-hidden="true"></i>
     </a>
     </div>
 )
