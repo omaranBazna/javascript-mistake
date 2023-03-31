@@ -11,23 +11,24 @@ function Problem({index,fontSize,setFontSize,item,value ,setValue}){
       }
     const handleChange = (val) => setValue(val);
     return(<div>
-        <div className="problem-header"><h3 className="m-4">{index+1}.{item.title}</h3> 
-      <div style={{display:"flex",justifyContent:"space-between",alignItems:"center", width:"80%",margin:"auto"}}>
+
+        <h3 style={{width:"80%"}} className="m-4 mx-auto">{index+1}.{item.title}</h3> 
+        <div style={{width:"80%"}}> <div style={{gap:"15px",display:"flex",justifyContent:"flex-start",alignItems:"center", width:"80%",margin:"auto"}}>
         
-        {item.tags && item.tags.length>0 && item.tags.map(val=>{
-           return <div className="tag">{val}</div>
+        {item.tags && item.tags.length>0 && item.tags.map((val,index)=>{
+           return <div key={index} className="tag">{val}</div>
         })}
-        </div>
+        </div></div>
+        <div className="problem-header mx-auto" style={{width:"80%",display:"flex",gap:"4px",justifyContent:"flex-end",alignItems:"center"}}>
+     
 
 
 
         <div style={{display:"flex",gap:"4px",justifyContent:"center",alignItems:"center"}}>
 
-     
-
       <DropdownButton onSelect={(event)=>{setFontSize(event)}} key={fontSize} title={fontSize}>
-        {[10,12,14,16,18,20,22,24,26].map(item=>{
-            return <Dropdown.Item eventKey={item} >{item}</Dropdown.Item>
+        {[10,12,14,16,18,20,22,24,26].map((item,index)=>{
+            return <Dropdown.Item key={index} eventKey={item} >{item}</Dropdown.Item>
         })}
         
       

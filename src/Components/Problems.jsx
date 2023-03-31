@@ -20,7 +20,7 @@ function Problems(){
     }
     return(
         <div className="problems">
-              {console.log(index)}
+             
               <Problem setFontSize={setFontSize} fontSize={fontSize} value={value} setValue={setValue} index={index}  item={problemsArr[index]} />
             
                 <Container style={{width:"80%"}} className="mx-auto m-4" fluid> 
