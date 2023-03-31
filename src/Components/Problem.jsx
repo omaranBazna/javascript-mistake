@@ -1,19 +1,53 @@
 
 import Editor from "@monaco-editor/react";
-function Problem({item}){
+import ToggleButton from 'react-bootstrap/ToggleButton';
+import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import { useState } from "react";
+function Problem({index,fontSize,setFontSize,item,value ,setValue}){
+  
+    const handleChange = (val) => setValue(val);
+    return(<div>
+      <div style={{display:"flex",justifyContent:"space-between",alignItems:"center", width:"80%",margin:"auto"}}>
+        <h3 className="m-4">{index+1}.{item.title}</h3>  
+        <div style={{display:"flex",gap:"4px",justifyContent:"center",alignItems:"center"}}>
 
-    return(<div><h1>{item.title}</h1>
-    <div style={{width:"80%",margin:"auto"}}>
-    <Editor
+     
+
+      <DropdownButton onSelect={(event)=>{setFontSize(event)}} key={fontSize} title={fontSize}>
+        {[10,12,14,16,18,20,22,24,26].map(item=>{
+            return <Dropdown.Item eventKey={item} >{item}</Dropdown.Item>
+        })}
+        
+      
+      </DropdownButton>
+
+        <ToggleButtonGroup style={{border:"1px solid rgb(200,200,200)"}} type="radio" name="options" value={value} onChange={handleChange}>
+      <ToggleButton variant={value==1?"light":"dark"} name="option1" id="tbg-btn-1" value={1}>
+          <i className="fa-sharp fa-regular fa-sun"></i>
+      </ToggleButton>
+      <ToggleButton variant={value==1?"light":"dark"} name="option2" id="tbg-btn-2" value={2}>
+        <i className="fa-solid fa-moon"></i>
+      </ToggleButton>
+    
+    </ToggleButtonGroup>
+    </div>
+        
+      </div>  
+    <div style={{borderRadius:"5px",overflow:"hidden", border:"2px solid rgb(173, 173, 173)",width:"80%",margin:"auto"}}>
+ 
+  <Editor
      style={{border:"4px solid grey"}}
-     height="200px"
+     height="100px"
      width="100%"
+     
      defaultLanguage="javascript"
      defaultValue={item.code}
      language={"javascript"}
     value={item.code}
-    theme="vs-dark"
-    options={{readOnly:true}}
+    theme={value==1?"vs-light":"vs-dark"}
+    options={{readOnly:true,fontSize:fontSize}}
    /></div>
     </div>)
 }
