@@ -189,7 +189,7 @@ console.log(arr[6])/*undefined*/
       "The bounds of any array is 0 to array.length-1 if you try to access index out of bounds you will get undefined",
   },
   {
-    title: "Loop the array out of bound",
+    title: "Loop the array out of bounds",
     tags: ["arrays", "loop"],
     code: `let arr=[0,1,-1,0,5];/*array length is 5*/
 for(let i=0;i<=arr.length;i++){/*i<=arr.length*/
@@ -208,5 +208,25 @@ for(let i=0;i<=arr.length-1;i++){/*i<arr.length-1*/
     error: "No error",
     explanation:
       "The bounds of any array is 0 to array.length-1 if you try to access index out of bounds you will get undefined",
+  },
+  {
+    title: "Loop the array out of bounds 2",
+    tags: ["arrays", "loop"],
+    code: `let arr=[0,1,-1,0,5];/*array length is 5*/
+for(let i=0;i<arr.length;i++){/*i<arr.length*/
+  console.log(arr[i])
+  console.log(arr[i+1])
+}
+/*output :0 1  ,  1 -1 , -1 0  ,  0  5,  5 undefined*/
+/*correct code*/
+for(let i=0;i<arr.length-1;i++){/*i<arr.length-1*/
+  console.log(arr[i])
+  console.log(arr[i+1])
+}
+/*output :0 1  ,  1 -1 , -1 0  ,  0  5*/
+`,
+    error: "No error",
+    explanation:
+      "if you are using arr[i+1] inside the for loop you should stop before the upper bound (arr.length-1)",
   },
 ];
