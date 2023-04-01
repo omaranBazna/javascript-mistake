@@ -186,6 +186,27 @@ console.log(arr[6])/*undefined*/
 `,
     error: "No error",
     explanation:
-      "The bounds of any array is 0 to array.length-1 if you try to access index out of bound you get undefined",
+      "The bounds of any array is 0 to array.length-1 if you try to access index out of bounds you will get undefined",
+  },
+  {
+    title: "Loop the array out of bound",
+    tags: ["arrays", "loop"],
+    code: `let arr=[0,1,-1,0,5];/*array length is 5*/
+for(let i=0;i<=arr.length;i++){/*i<=arr.length*/
+  console.log(arr[i])
+}
+/*output :0,1,-1,0,5,undefined*/
+/*correct code*/
+for(let i=0;i<arr.length;i++){/*i<arr.length*/
+  console.log(arr[i])
+}
+/*or*/
+for(let i=0;i<=arr.length-1;i++){/*i<arr.length-1*/
+  console.log(arr[i])
+}
+`,
+    error: "No error",
+    explanation:
+      "The bounds of any array is 0 to array.length-1 if you try to access index out of bounds you will get undefined",
   },
 ];
