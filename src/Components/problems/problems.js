@@ -229,7 +229,7 @@ for(let i=0;i<arr.length-1;i++){/*i<arr.length-1*/
     explanation:
       "if you are using arr[i+1] inside the for loop you should stop before the upper bound (arr.length-1)",
   },
-  ,
+
   {
     title: "Loop the array out of bounds 3",
     tags: ["arrays", "loop"],
@@ -248,6 +248,6 @@ for(let i=1;i<arr.length-1;i++){/*i=1*/
 `,
     error: "No error",
     explanation:
-      "Since the code is using arr[i-1] inside the for loop , we should start at i=1 to we don't try to access arr[0-1] index",
+      "Since the code is using arr[i-1] inside the for loop , we should start at i=1 so we don't try to access arr[0-1] index",
   },
 ];
