@@ -132,4 +132,21 @@ console.log(x)//output:3
     explanation:
       "We should either double (==) or triple (===) comparison operators to compare between two values.",
   },
+  {
+    title: "Read property of undefined",
+    tags: ["property", "undefined"],
+    code: `let x;
+/*x is undefined*/
+console.log(x.some_property)/*read the property of the undefined variable x*/
+/*to avoid this ,check the if x is defined before read the property */
+if(x){
+  console.log(x.some_property)
+}
+/*or*/
+x && console.log(x.some_property)
+`,
+    error: "ReferenceError: a is not defined",
+    explanation:
+      "undefined variables can not hold properties ,so if we try to read a variable we should check if it is defined first",
+  },
 ];
