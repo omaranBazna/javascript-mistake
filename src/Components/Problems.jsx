@@ -10,6 +10,7 @@ function MyVerticallyCenteredModal(props) {
   return (
     <Modal
       {...props}
+      onHide={()=>{}}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
@@ -81,7 +82,7 @@ function Problems(){
             }
       </Col> </Row>  
       
-      <Row><h4 className="buyme">Buy me 
+      <Row><h4 className="buyme">Buy me a : 
         <a target="_blank" href="https://buy.stripe.com/4gw6r4cMT1rVbxCaEM">☕ $1.5</a>
         
          

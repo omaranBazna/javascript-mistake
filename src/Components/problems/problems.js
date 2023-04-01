@@ -229,7 +229,6 @@ for(let i=0;i<arr.length-1;i++){/*i<arr.length-1*/
     explanation:
       "if you are using arr[i+1] inside the for loop you should stop before the upper bound (arr.length-1)",
   },
-
   {
     title: "Loop the array out of bounds 3",
     tags: ["arrays", "loop"],
@@ -249,5 +248,30 @@ for(let i=1;i<arr.length-1;i++){/*i=1*/
     error: "No error",
     explanation:
       "Since the code is using arr[i-1] inside the for loop , we should start at i=1 so we don't try to access arr[0-1] index",
+  },
+  {
+    title: "Arrays shallow copy",
+    tags: ["arrays", "shallow copy"],
+    code: `let arr1=[0,1,-1,0,5];
+console.log(arr1[0])/*0*/
+let arr2=arr1;/*shallow copy*/
+let arr3=arr2;/*shallow copy*/
+arr2[0]=1000;
+console.log(arr2[0])/*1000*/
+console.log(arr1[0])/*1000*/
+console.log(arr3[0])/*1000*/
+arr2[0]=-1000;
+console.log(arr2[0])/*-1000*/
+console.log(arr1[0])/*-1000*/
+console.log(arr3[0])/*-1000*/
+arr3[0]=500;
+console.log(arr1[0])/*500*/
+console.log(arr2[0])/*500*/
+console.log(arr3[0])/*500*/
+}
+`,
+    error: "No error:unexpected error",
+    explanation:
+      "arr2=arr1 is shallow copying so changing the value of some index of arr2 will also change arr1 , changing the value at index of arr1 will change the value of arr2",
   },
 ];
