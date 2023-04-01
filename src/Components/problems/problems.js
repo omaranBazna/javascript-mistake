@@ -140,12 +140,33 @@ console.log(x)//output:3
 console.log(x.some_property)/*read the property of the undefined variable x*/
 /*to avoid this ,check the if x is defined before read the property */
 if(x){
-  console.log(x.some_property)
+  console.log(x.some_property)/*won't printed*/
 }
 /*or*/
-x && console.log(x.some_property)
+x && console.log(x.some_property)/*won't printed*/
+/*or*/
+console.log(x?.some_property)/*print undefined but won't throw error*/
 `,
     error: "ReferenceError: a is not defined",
+    explanation:
+      "undefined variables can not hold properties ,so if we try to read a variable we should check if it is defined first",
+  },
+  {
+    title: "Read property of null",
+    tags: ["property", "null"],
+    code: `let x=null;
+/*x is null*/
+console.log(x.some_property)/*read the property of the null variable x*/
+/*to avoid this ,check the if x is not null before read the property (null safety)*/
+if(x){
+  console.log(x.some_property)/*won't printed*/
+}
+/*or*/
+x && console.log(x.some_property)/*won't printed*/
+/*or*/
+console.log(x?.some_property)/*print undefined but won't throw error*/
+`,
+    error: "TypeError: Cannot read properties of null",
     explanation:
       "undefined variables can not hold properties ,so if we try to read a variable we should check if it is defined first",
   },
