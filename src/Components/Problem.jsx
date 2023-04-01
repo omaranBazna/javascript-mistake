@@ -12,7 +12,7 @@ function Problem({index,fontSize,setFontSize,item,value ,setValue}){
     const handleChange = (val) => setValue(val);
     return(<div>
 
-        <h3 style={{width:"87%"}} className="m-4 mx-auto">{index+1}.{item.title}</h3> 
+        <h1 style={{width:"87%"}} className="m-4 mx-auto">{index+1}.{item.title}</h1> 
         <div style={{width:"87%"}}> <div style={{gap:"15px",display:"flex",justifyContent:"flex-start",alignItems:"center", width:"87%",margin:"auto"}}>
         
         {item.tags && item.tags.length>0 && item.tags.map((val,index)=>{

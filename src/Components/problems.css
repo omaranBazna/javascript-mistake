@@ -12,5 +12,25 @@
 
 }
 .tag:hover{
-    background-color:rgb(228, 228, 228);
+    background-color:rgb(231, 212, 212);
+}
+.buyme{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+    padding:20px;
+    border-radius:4px;
+    background-color: black;
+    color:white;
+}
+.buyme a{
+    color:inherit;
+    color:rgb(205, 205, 205);
+    text-decoration:none;
+    font-size:25px;
+    
+}
+.buyme a:hover{
+    color:rgb(255, 255, 255);
 }
