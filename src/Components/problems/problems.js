@@ -274,4 +274,39 @@ console.log(arr3[0])/*500*/
     explanation:
       "arr2=arr1 is shallow copying so changing the value of some index of arr2 will also change arr1 , changing the value at index of arr1 will change the value of arr2",
   },
+  {
+    title: "Pass array to function",
+    tags: [
+      "arrays",
+      "objects",
+      "function",
+      "pass by reference",
+      "pass by value",
+    ],
+    code: `function fun(arr,val,obj){
+arr[0]=-1000;
+val=1000;
+obj.key1=1000;
+}
+let arr=[0,1,-1,0,5];
+let obj={
+  key1:1,
+  key2:2
+}
+let val=2;
+console.log(arr)//[0,1,-1,0,5]
+console.log(val)//2
+console.log(obj)//{key1:1,key2:2}
+fun(arr,val,obj)
+console.log(arr)//[-1000,1,-1,0,5]
+console.log(val)//2
+console.log(obj)//{key1:1000,key2:2}
+/*passing a variable to a function does not change the variable value ,but passing arrays and objects to a function will mutate the array or object because it is passed by reference*/
+
+}
+`,
+    error: "No error:unexpected error",
+    explanation:
+      "arr2=arr1 is shallow copying so changing the value of some index of arr2 will also change arr1 , changing the value at index of arr1 will change the value of arr2",
+  },
 ];
