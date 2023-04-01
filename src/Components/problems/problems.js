@@ -170,4 +170,22 @@ console.log(x?.some_property)/*print undefined but won't throw error*/
     explanation:
       "undefined variables can not hold properties ,so if we try to read a variable we should check if it is defined first",
   },
+  {
+    title: "Read array out of bounds",
+    tags: ["arrays"],
+    code: `let arr=[0,1,-1,0,5];/*array length is 5*/
+console.log(arr[0])/*0*/
+console.log(arr[1])/*1*/
+console.log(arr[2])/*-1*/
+console.log(arr[3])/*0*/
+console.log(arr[4])/*5*/
+console.log(arr[5])/*undefined*/
+console.log(arr[6])/*undefined*/
+/*any number greater than 4 is out of bounds of the array*/
+/*the bounds of the array is 0 to array.length-1*/
+`,
+    error: "No error",
+    explanation:
+      "The bounds of any array is 0 to array.length-1 if you try to access index out of bound you get undefined",
+  },
 ];
