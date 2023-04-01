@@ -84,7 +84,6 @@ switch(a){
     explanation:
       "Unless we break the case ,javascript compiler will keep executes the rest cases until hitting first break statement",
   },
-
   {
     title: "Early return",
     tags: ["return"],
