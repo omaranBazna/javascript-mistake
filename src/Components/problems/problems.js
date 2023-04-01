@@ -275,7 +275,7 @@ console.log(arr3[0])/*500*/
       "arr2=arr1 is shallow copying so changing the value of some index of arr2 will also change arr1 , changing the value at index of arr1 will change the value of arr2",
   },
   {
-    title: "Pass array to function",
+    title: "Pass array/object to a function",
     tags: [
       "arrays",
       "objects",
