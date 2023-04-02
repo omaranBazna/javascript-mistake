@@ -645,4 +645,58 @@ let super=3
   
   Now, the "Dog" instance will have a "name" property inherited from the "Animal" class, and we can call the "makeSound" method on it without getting a TypeError.`,
   },
+  {
+    title: "Use of 'this' in Arrow Functions",
+    code: `const obj = {
+  name: "John",
+  age: 30,
+  sayHello: () => {
+    console.log('Hello, my name is '+ this.name+' and I am '+this.age+' years old.');
+  }
+};
+
+obj.sayHello();`,
+    tags: ["arrow functions", "this keyword"],
+    error: "TypeError: Cannot read property 'name' of undefined",
+    explanation:
+      "Arrow functions do not bind their own 'this' keyword, and instead use the 'this' value of their surrounding lexical scope. In this case, the 'this' keyword inside the sayHello arrow function refers to the global 'this', which does not have a 'name' or 'age' property.",
+  },
+  {
+    title: "Forget to add return to the arrow function",
+    code: `let arr=[1,2,3,4]
+let doubledArr=arr.map((item)=>{
+  item*2
+})
+console.log(doubledArr)///[undefined,undefined,undefined,undefined]
+
+
+/*correct code */
+doubledArr=arr.map((item)=>{
+  return item*2  //add return keyword
+})
+console.log(doubledArr)//[2,4,6,8]
+
+
+`,
+    tags: ["arrow functions", "inline function", "return keyword"],
+    error: "No error",
+    explanation:
+      "We should add the 'return' keyword to the arrow function of the map method since it is not inline function ,however we should not add return keyword if it was inline function",
+  },
+  {
+    title: "Using 'arguments' keyword in Arrow Functions",
+    code: `const sum = () => {
+let total = 0;
+for (let i = 0; i < arguments.length; i++) {
+  total += arguments[i];
+}
+return total;
+}
+console.log(sum(1, 2, 3)); 
+`,
+    tags: ["arrow functions", "arguments keyword"],
+    error: "ReferenceError: arguments is not defined",
+    explanation:
+      "Arrow functions do not have their own arguments object, and instead use the arguments object of their surrounding lexical scope. In this case, the arrow function sum does not have access to the arguments object of the global scope, resulting in a reference error. To solve this, we can either use a regular function declaration that has its own arguments object.",
+  },
 ];
