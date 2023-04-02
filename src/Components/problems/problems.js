@@ -407,4 +407,193 @@ console.log(firstPerson.name==secondPerson.name&& firstPerson.age==secondPerson.
     error: `SyntaxError: Unexpected token ';'`,
     explanation: `we should use commas ',' to separate between key-value pairs.`,
   },
+  {
+    title:
+      "Subtract ,divide and multiply by String that does not hold numeric values",
+    code: `console.log("Hi"-2) //output 'NaN'
+console.log("Hi"/2) //output 'NaN'
+console.log("Hi"*2) //output 'NaN'
+console.log("Hi"+2) //output "Hi2"
+/*correct code*/
+console.log("2"-2) //output 0
+console.log("2"/2) //output 1
+console.log("2"*2) //output 4
+console.log("2"+2) //output 22 (not 4)
+`,
+    tags: ["Strings", "variable types"],
+    error: `No error`,
+    explanation: `The string "Hi" does not hold numeric values so we can not apply mathematical operations on it however can still apply add operation + to append to the string`,
+  },
+  {
+    title: "Using keyword as identifier for variable",
+    code: `let let=2
+let const=3
+let for=4
+let while=5
+let switch=5
+let case=5
+let function=5
+let do=2
+let return=5
+let new=5
+let class=5
+let else=5
+let if=4
+let export=5
+let import=2
+let default=4
+let continue=4
+let try=4
+let this=4
+let typeof=4
+let extends=4
+let super=3
+    `,
+    tags: ["variable declarations", "syntax error"],
+    error: `SyntaxError: Unexpected token '[keyword name :let,const,for,while,...]'`,
+    explanation: `We can not use JavaScript reserved keywords for identifier names.`,
+  },
+  {
+    title: "Defining a class without a constructor method",
+    code: `class Rectangle {
+      width;
+      height;
+      area() {
+          return this.width * this.height;
+      }
+  }
+  
+  const rect = new Rectangle();
+  rect.width = 10;
+  rect.height = 20;
+  console.log(rect.area()); // Output: NaN`,
+    tags: ["classes", "constructor", "NaN"],
+    error: `No error`,
+    explanation: `When defining a class in JavaScript, it is common to include a constructor method that is used to initialize the object's properties. In the example above, however, we have defined a class called "Rectangle" without a constructor method. As a result, when we create a new instance of the class and try to set its "width" and "height" properties, they remain undefined. When we try to call the "area" method on the object, we end up multiplying undefined values together, which results in NaN (Not a Number). To fix this issue, we can define a constructor method within the class that initializes the "width" and "height" properties.`,
+  },
+  {
+    title: "Using 'this' keyword outside of a class method",
+    code: `class Rectangle {
+      constructor(width, height) {
+        this.width = width;
+        this.height = height;
+      }
+    
+      calculateArea() {
+        return this.width * this.height;
+      }
+    }
+    
+    const rect = new Rectangle(10, 20);
+    const area = rect.calculateArea();
+    
+    function logArea() {
+      console.log(this.area);
+    }
+    
+    logArea(); // Output: undefined`,
+    tags: ["classes", "this keyword", "undefined"],
+    error: `No error`,
+    explanation: `In JavaScript, the 'this' keyword is used to refer to the current object in a method. In the example above, we have defined a class called "Rectangle" with a method called "calculateArea" that uses the 'this' keyword to refer to the object's "width" and "height" properties. However, we also have a function called "logArea" defined outside of the class, which tries to access a property called "area" using the 'this' keyword. Since "area" is not defined anywhere in the code, the output is 'undefined'. To fix this issue, we can change "this.area" to "area" within the "logArea" function.`,
+  },
+  {
+    title: "Using 'extends' keyword incorrectly in class inheritance",
+    code: `class Animal {
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+    
+      speak() {
+        console.log("I am an animal.");
+      }
+    }
+    
+    class Dog extends Animal {
+      constructor(name, age, breed) {
+        super(name, age);
+        this.breed = breed;
+      }
+    
+      speak() {
+        console.log("Woof!");
+      }
+    
+      fetch() {
+        console.log("Fetching the ball...");
+      }
+    }
+    
+    const animal = new Animal("Unknown", 5);
+    const dog = new Dog("Fido", 3, "Labrador");
+    
+    animal.fetch(); // Output: TypeError: animal.fetch is not a function
+    dog.fetch(); // Output: "Fetching the ball..."`,
+    tags: ["classes", "inheritance", "TypeError"],
+    error: `TypeError: animal.fetch is not a function`,
+    explanation: `In JavaScript, we can use the 'extends' keyword to create a subclass that inherits properties and methods from a superclass. In the example above, we have defined a class called "Animal" with a method called "speak", and a subclass called "Dog" that extends "Animal" and adds a method called "fetch". 
+  
+  However, we are trying to call the "fetch" method on an instance of the "Animal" class, which doesn't have this method since it's only defined in the "Dog" subclass. This results in a TypeError: "animal.fetch is not a function". To fix this issue, we should only call the "fetch" method on instances of the "Dog" class, like we do with the "dog" object in the example above.`,
+  },
+  {
+    title: "Using 'static' keyword incorrectly in a class",
+    code: `class Circle {
+      constructor(radius) {
+        this.radius = radius;
+      }
+    
+      static PI = 3.14;
+    
+      getArea() {
+        return Circle.PI * this.radius * this.radius;
+      }
+    }
+    
+    const circle = new Circle(5);
+    
+    console.log(circle.getArea()); // Output: TypeError: Cannot read property 'PI' of undefined`,
+    tags: ["classes", "static keyword", "TypeError"],
+    error: `TypeError: Cannot read property 'PI' of undefined`,
+    explanation: `In JavaScript, we can use the 'static' keyword to define methods or properties that belong to the class itself, rather than to instances of the class. In the example above, we have defined a class called "Circle" with a static property called "PI", which represents the mathematical constant pi. We use this static property in the "getArea" method to calculate the area of the circle.
+  
+  However, when we try to create an instance of the "Circle" class and call the "getArea" method on it, we get a TypeError: "Cannot read property 'PI' of undefined". This happens because we are trying to access the static property "PI" using the instance "circle", rather than the class "Circle". To fix this issue, we should access the "PI" property using the class name "Circle", like this: "return Circle.PI * this.radius * this.radius;".`,
+  },
+  {
+    title: "Using 'extends' keyword incorrectly in a class",
+    code: `class Animal {
+      constructor(name) {
+        this.name = name;
+      }
+    
+      makeSound() {
+        console.log("This animal makes a sound.");
+      }
+    }
+    
+    class Dog extends Animal {
+      constructor(name, breed) {
+        this.breed = breed;
+      }
+    }
+    
+    const dog = new Dog("Buddy", "Golden Retriever");
+    
+    dog.makeSound(); // Output: TypeError: dog.makeSound is not a function`,
+    tags: ["classes", "extends keyword", "TypeError"],
+    error: `TypeError: dog.makeSound is not a function`,
+    explanation: `In JavaScript, we can use the 'extends' keyword to create a subclass (or child class) of an existing class (or parent class). In the example above, we have defined a class called "Animal" with a constructor that sets the animal's name and a method called "makeSound" that logs a message to the console.
+  
+  We then define a class called "Dog" that extends the "Animal" class. However, in the "Dog" class constructor, we are not calling the parent class constructor using the "super" keyword, which is required when defining a subclass constructor. As a result, the "name" property is not set on the "Dog" instance.
+  
+  Furthermore, since the "makeSound" method is defined in the "Animal" class and not in the "Dog" class, we should be able to call it on an instance of the "Dog" class. However, when we try to do so, we get a TypeError: "dog.makeSound is not a function". This happens because the "Dog" class does not inherit the "makeSound" method from the "Animal" class, since we did not correctly use the "extends" keyword and the "super" keyword. To fix this issue, we should define the "Dog" class constructor like this:
+  
+    class Dog extends Animal {
+      constructor(name, breed) {
+        super(name);
+        this.breed = breed;
+      }
+    }
+  
+  Now, the "Dog" instance will have a "name" property inherited from the "Animal" class, and we can call the "makeSound" method on it without getting a TypeError.`,
+  },
 ];
