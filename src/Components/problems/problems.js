@@ -369,4 +369,19 @@ console.log(arr)///print [1,2,3,4,5]
     error: `No error`,
     explanation: `When we apply immutable methods (map,filter) the method won't affect the original array so we need to create a new array to store the new array `,
   },
+  {
+    title: "Call the function when passing it to other function",
+    code: `function fun(a){
+return a*2
+}
+let arr=[1,2,3,4]
+arr=arr.map(fun())/*wrong*/
+//arr=arr.map(fun) correct code
+console.log(arr)
+}
+`,
+    tags: ["functional programming", "high order functions"],
+    error: `TypeError: NaN is not a function`,
+    explanation: `We should pass the function reference (name) to the high order function not the function call `,
+  },
 ];
