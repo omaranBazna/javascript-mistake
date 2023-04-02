@@ -309,4 +309,25 @@ console.log(obj)//{key1:1000,key2:2}
     explanation:
       "arr2=arr1 is shallow copying so changing the value of some index of arr2 will also change arr1 , changing the value at index of arr1 will change the value of arr2",
   },
+  {
+    title: "Semicolon in a wrong place",
+    code: `if(3>4);{
+console.log(2)///will print 2
+}*/
+}`,
+    tags: ["semicolon"],
+    error: `No error:unexpected result`,
+    explanation: `when we put the semicolon after the if parentheses we terminate the if statement  ,then the curl brackets open new scope which executed and print 2`,
+  },
+  {
+    title: "Semicolon in a wrong place 2",
+    code: `function fun();{
+console.log("here")
+}
+      */
+}`,
+    tags: ["Syntax error", "semicolon"],
+    error: `SyntaxError: Unexpected token ';'`,
+    explanation: `Putting the semicolon ; in the wrong place`,
+  },
 ];
