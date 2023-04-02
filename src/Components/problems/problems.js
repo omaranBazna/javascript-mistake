@@ -46,6 +46,26 @@ console.log(i)
       "At every iteration we increment i by 0 so it is impossible to make i greater than 100 and break the for loop.",
   },
   {
+    title: "Incorrect for loop syntax",
+    tags: ["for loop", "syntax error"],
+    code: `let myArray = [1, 2, 3, 4, 5];
+for (let i = 0; i < myArray.length, i++) {
+  console.log(myArray[i]);
+}
+
+/*correct code*/
+let myArray = [1, 2, 3, 4, 5];
+for (let i = 0; i < myArray.length; i++) {
+  console.log(myArray[i]);
+}
+
+`,
+    error: "SyntaxError: Unexpected token ','",
+    explanation:
+      "In a for loop in JavaScript, the syntax is for (initialization; condition; increment). In this example, the for loop has a syntax error because the comma (,) is used instead of a semicolon (;) to separate the condition and increment expressions.",
+  },
+
+  {
     title: "Infinite while loop",
     tags: ["while loop", "infinite loops"],
     code: `while(true){
@@ -387,15 +407,6 @@ console.log(firstPerson.name==secondPerson.name&& firstPerson.age==secondPerson.
     `,
     tags: ["objects", "syntax error"],
     error: `SyntaxError: Unexpected token '-'`,
-    explanation: `We shouldn't use hyphens in object property name ,however if we need to do that we should surround the property name by quotations`,
-  },
-  {
-    title: "Using hyphens in object property names",
-    code: `const myObject = { some-property: "A property" } ///wrong code
-    ///const myObject = { "some-property": "A property" } ///correct code
-    `,
-    tags: ["objects", "syntax error"],
-    error: `SyntaxError: Unexpected token '-'`,
     explanation: `e shouldn't use hyphens in object property name ,however if we need to do that we should surround the property name by quotations`,
   },
   {
@@ -453,6 +464,28 @@ let super=3
     error: `SyntaxError: Unexpected token '[keyword name :let,const,for,while,...]'`,
     explanation: `We can not use JavaScript reserved keywords for identifier names.`,
   },
+  {
+    title: "Using spaces in a variable name",
+    code: `let my var = "This will cause an error";`,
+    tags: ["variables", "naming"],
+    error: `SyntaxError: Unexpected identifier`,
+    explanation: `We cannot use spaces in variable names because they are not valid characters in JavaScript variable names.`,
+  },
+  {
+    title: "Using special characters in a variable name",
+    code: `let myVar! = "This will cause an error";`,
+    tags: ["variables", "naming"],
+    error: `SyntaxError: Unexpected token '!'`,
+    explanation: `We cannot use special characters such as !, @, #, $, %, ^, &, *, (, ), -, +, =, {, }, [, ], |, \, :, ;, ', ", ,, <, >, ., /, ?, and ~ in variable names because they are not valid characters in JavaScript variable names.`,
+  },
+  {
+    title: "Using numbers at the beginning of a variable name",
+    code: `let 123test = "This will cause an error";`,
+    tags: ["variables", "naming"],
+    error: `SyntaxError: Unexpected number`,
+    explanation: `Variable names in JavaScript cannot start with a number. They can only start with a letter, underscore (_), or dollar sign ($). If you need to use a number in your variable name, you can include it after the first character. For example, test123 would be a valid variable name.`,
+  },
+
   {
     title: "Defining a class without a constructor method",
     code: `class Rectangle {
