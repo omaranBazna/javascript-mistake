@@ -370,7 +370,7 @@ console.log(arr)///print [1,2,3,4,5]
     explanation: `When we apply immutable methods (map,filter) the method won't affect the original array so we need to create a new array to store the new array `,
   },
   {
-    title: "Comparing two objects incorrectly",
+    title: "Comparing between two objects incorrectly",
     code: `const firstPerson = { name: "Edward", age: 44 }
 const secondPerson = { name: "Edward", age: 44 }
 console.log(firstPerson === secondPerson) // false because the two objects have different reference in the memory 
@@ -379,5 +379,32 @@ console.log(firstPerson.name==secondPerson.name&& firstPerson.age==secondPerson.
     tags: ["objects"],
     error: `No error`,
     explanation: `When we compare two objects names ,it compares the references in the memory ,in order to compare the two objects we need to compare value by value`,
+  },
+  {
+    title: "Using hyphens in object property names",
+    code: `const myObject = { some-property: "A property" } ///wrong code
+    ///const myObject = { "some-property": "A property" } ///correct code
+    `,
+    tags: ["objects", "syntax error"],
+    error: `SyntaxError: Unexpected token '-'`,
+    explanation: `We shouldn't use hyphens in object property name ,however if we need to do that we should surround the property name by quotations`,
+  },
+  {
+    title: "Using hyphens in object property names",
+    code: `const myObject = { some-property: "A property" } ///wrong code
+    ///const myObject = { "some-property": "A property" } ///correct code
+    `,
+    tags: ["objects", "syntax error"],
+    error: `SyntaxError: Unexpected token '-'`,
+    explanation: `e shouldn't use hyphens in object property name ,however if we need to do that we should surround the property name by quotations`,
+  },
+  {
+    title: "Put semicolon inside Object brackets between key-values pair",
+    code: `const myObject = { key1:'val1';key2:'val2';key3:'val3' } ///wrong code
+    ///const myObject = { key1:'val1',key2:'val2',key3:'val3'} ///correct code
+    `,
+    tags: ["objects", "syntax error"],
+    error: `SyntaxError: Unexpected token ';'`,
+    explanation: `we should use commas ',' to separate between key-value pairs.`,
   },
 ];
