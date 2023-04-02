@@ -339,4 +339,19 @@ console.log("here");
     error: `No error`,
     explanation: `when we put the semicolon after the for loop parentheses we terminate the for loop  ,then the curl brackets open new scope which executed and print here`,
   },
+  {
+    title: "Wrong use of mutate method",
+    code: `let arr=[1,2,3,4,5]
+arr=arr.push(6)
+console.log(arr)///print 6
+//push method return the new length of the array 
+arr=[1,2,3,4,5]
+arr=arr.pop()
+console.log(arr)///print 5
+//pop method return the popped array 
+`,
+    tags: ["arrays", "mutate methods"],
+    error: `No error`,
+    explanation: `When we apply mutate methods (push,pop,shift ,unshift) the method will mutate the array so no need to re-assign the array `,
+  },
 ];
