@@ -84,10 +84,8 @@ function Problems(){
       
       <Row><h4 className="buyme">Buy me a : 
         <a target="_blank" href="https://buy.stripe.com/4gw6r4cMT1rVbxCaEM">☕ $1.5</a>
-        
-         
-         <a href="https://buy.stripe.com/14k2aOfZ5eeHdFKaEN">🍨 $3.0</a>
-      <a target="_blank" href="https://buy.stripe.com/bIY8zcfZ5daD6di6oy">🎁 $5.0</a>
+        <a href="https://buy.stripe.com/14k2aOfZ5eeHdFKaEN">🍨 $3.0</a>
+        <a target="_blank" href="https://buy.stripe.com/bIY8zcfZ5daD6di6oy">🎁 $5.0</a>
       </h4>
         </Row></Container>
         
