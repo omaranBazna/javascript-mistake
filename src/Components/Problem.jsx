@@ -50,7 +50,7 @@ function Problem({index,fontSize,setFontSize,item,value ,setValue}){
  
   <Editor
      style={{border:"4px solid grey"}}
-     height="180px"
+     height="200px"
      width="100%"
      
      defaultLanguage="javascript"
