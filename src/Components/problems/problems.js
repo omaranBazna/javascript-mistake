@@ -370,18 +370,14 @@ console.log(arr)///print [1,2,3,4,5]
     explanation: `When we apply immutable methods (map,filter) the method won't affect the original array so we need to create a new array to store the new array `,
   },
   {
-    title: "Call the function when passing it to other function",
-    code: `function fun(a){
-return a*2
-}
-let arr=[1,2,3,4]
-arr=arr.map(fun())/*wrong*/
-//arr=arr.map(fun) correct code
-console.log(arr)
-}
+    title: "Comparing two objects incorrectly",
+    code: `const firstPerson = { name: "Edward", age: 44 }
+const secondPerson = { name: "Edward", age: 44 }
+console.log(firstPerson === secondPerson) // false because the two objects have different reference in the memory 
+console.log(firstPerson.name==secondPerson.name&& firstPerson.age==secondPerson.age)//true compare the values of the two objects
 `,
-    tags: ["functional programming", "high order functions"],
-    error: `TypeError: NaN is not a function`,
-    explanation: `We should pass the function reference (name) to the high order function not the function call `,
+    tags: ["objects"],
+    error: `No error`,
+    explanation: `When we compare two objects names ,it compares the references in the memory ,in order to compare the two objects we need to compare value by value`,
   },
 ];
