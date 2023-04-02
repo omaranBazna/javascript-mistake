@@ -350,8 +350,23 @@ arr=arr.pop()
 console.log(arr)///print 5
 //pop method return the popped array 
 `,
-    tags: ["arrays", "mutate methods"],
+    tags: ["arrays", "immutable methods"],
     error: `No error`,
     explanation: `When we apply mutate methods (push,pop,shift ,unshift) the method will mutate the array so no need to re-assign the array `,
+  },
+  {
+    title: "Misuse  of immutable method",
+    code: `let arr=[1,2,3,4,5]
+arr.map(item=>item*2)
+console.log(arr)///print [1,2,3,4,5]
+//map does not change the array but rather create new array 
+arr=[1,2,3,4,5]
+arr.filter(item=>item%2==0)
+console.log(arr)///print [1,2,3,4,5]
+//filter does not change the array but rather create new array 
+`,
+    tags: ["arrays", "immutable methods"],
+    error: `No error`,
+    explanation: `When we apply immutable methods (map,filter) the method won't affect the original array so we need to create a new array to store the new array `,
   },
 ];
