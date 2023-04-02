@@ -66,6 +66,22 @@ for (let i = 0; i < myArray.length; i++) {
   },
 
   {
+    title: "Using break statement in nested for loop",
+    tags: ["nested loops", "break statement"],
+    code: `let arr = [[1, 2], [3, 4], [5, 6]];
+for (let i = 0; i < arr.length; i++) {
+   for (let j = 0; j < arr[i].length; j++) {
+     console.log(arr[i][j]);
+       if (j === 1) {
+         break;
+      }
+    }
+}`,
+    error: "No error",
+    explanation: `In this code, we have a nested for loop that iterates over a 2-dimensional array arr. The inner loop iterates over the sub-arrays within arr, and logs each element to the console. However, we have added a condition using the if statement to check if the index j of the inner loop is equal to 1. If the condition is true, we use the break statement to exit the inner loop.When this code is executed, it will log the elements of the first sub-array [1, 2], then break out of the inner loop when j is equal to 1. It will then move on to the next sub-array [3, 4] and log its elements, but since the break statement is only affecting the inner loop, the outer loop will continue to the next iteration, and the inner loop will start again from the beginning with the next sub-array [5, 6].`,
+  },
+
+  {
     title: "Infinite while loop",
     tags: ["while loop", "infinite loops"],
     code: `while(true){
