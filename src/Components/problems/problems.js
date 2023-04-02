@@ -313,8 +313,8 @@ console.log(obj)//{key1:1000,key2:2}
     title: "Semicolon in a wrong place",
     code: `if(3>4);{
 console.log(2)///will print 2
-}*/
-}`,
+}
+`,
     tags: ["semicolon"],
     error: `No error:unexpected result`,
     explanation: `when we put the semicolon after the if parentheses we terminate the if statement  ,then the curl brackets open new scope which executed and print 2`,
@@ -322,12 +322,21 @@ console.log(2)///will print 2
   {
     title: "Semicolon in a wrong place 2",
     code: `function fun();{
-console.log("here")
-}
-      */
+console.log("here")  
 }`,
     tags: ["Syntax error", "semicolon"],
     error: `SyntaxError: Unexpected token ';'`,
     explanation: `Putting the semicolon ; in the wrong place`,
+  },
+  {
+    title: "Semicolon in a wrong place 3",
+    code: `for(let i=0;i<100;i++);
+{
+console.log("here");
+}
+`,
+    tags: ["semicolon"],
+    error: `No error`,
+    explanation: `when we put the semicolon after the for loop parentheses we terminate the for loop  ,then the curl brackets open new scope which executed and print here`,
   },
 ];
