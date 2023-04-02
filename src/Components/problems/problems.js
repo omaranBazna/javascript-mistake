@@ -684,6 +684,49 @@ console.log(doubledArr)//[2,4,6,8]
       "We should add the 'return' keyword to the arrow function of the map method since it is not inline function ,however we should not add return keyword if it was inline function",
   },
   {
+    title: "Wrong arrow function syntax",
+    code: `const fun(){//wrong syntax
+console.log("Hi")
+}
+const fun2=(){//wrong syntax
+  console.log("Hi")
+}
+const fun3=()={//wrong syntax
+  console.log("Hi")
+}
+const fun2=()=>{//correct syntax
+  console.log("Hi")
+}
+`,
+    tags: ["arrow functions", "syntax error"],
+    error: "Syntax error",
+    explanation:
+      "Arrow function syntax :   let/const [function name] = ([arguments list]) => {return [value]} ***or*** inline arrow functions :  let/const [function name] = ([arguments list]) => [value]",
+  },
+  {
+    title:
+      "Forget to add return to the arrow function(callback) in high-order method ",
+    code: `let arr=[1,2,3,4]
+let doubledArr=arr.map((item)=>{
+  item*2
+})
+console.log(doubledArr)///[undefined,undefined,undefined,undefined]
+
+
+/*correct code */
+doubledArr=arr.map((item)=>{
+  return item*2  //add return keyword
+})
+console.log(doubledArr)//[2,4,6,8]
+
+
+`,
+    tags: ["arrow functions", "inline function", "return keyword"],
+    error: "No error",
+    explanation:
+      "We should add the 'return' keyword to the arrow function of the map method since it is not inline function ,however we should not add return keyword if it was inline function",
+  },
+  {
     title: "Using 'arguments' keyword in Arrow Functions",
     code: `const sum = () => {
 let total = 0;
