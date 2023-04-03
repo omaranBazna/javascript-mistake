@@ -157,41 +157,10 @@ function Share(){
           </LinkedinShareButton>
         </div>
 
-        <div className="Demo__some-network">
-          <PinterestShareButton
-            url={String(window.location)}
-            media={``}
-            className="Demo__some-network__share-button"
-          >
-            <PinterestIcon size={32} round />
-          </PinterestShareButton>
 
-         
-        </div>
+        
 
-        <div className="Demo__some-network">
-          <VKShareButton
-            url={shareUrl}
-            image={``}
-            className="Demo__some-network__share-button"
-          >
-            <VKIcon size={32} round />
-          </VKShareButton>
-
-          
-        </div>
-
-        <div className="Demo__some-network">
-          <OKShareButton
-            url={shareUrl}
-            image={``}
-            className="Demo__some-network__share-button"
-          >
-            <OKIcon size={32} round />
-          </OKShareButton>
-
-         
-        </div>
+       
 
         <div className="Demo__some-network">
           <RedditShareButton
@@ -207,37 +176,11 @@ function Share(){
           
         </div>
 
-        <div className="Demo__some-network">
-          <TumblrShareButton
-            url={shareUrl}
-            title={title}
-            className="Demo__some-network__share-button"
-          >
-            <TumblrIcon size={32} round />
-          </TumblrShareButton>
+       
 
-        </div>
+       
 
-        <div className="Demo__some-network">
-          <LivejournalShareButton
-            url={shareUrl}
-            title={title}
-            description={shareUrl}
-            className="Demo__some-network__share-button"
-          >
-            <LivejournalIcon size={32} round />
-          </LivejournalShareButton>
-        </div>
-
-        <div className="Demo__some-network">
-          <MailruShareButton
-            url={shareUrl}
-            title={title}
-            className="Demo__some-network__share-button"
-          >
-            <MailruIcon size={32} round />
-          </MailruShareButton>
-        </div>
+        
 
         <div className="Demo__some-network">
           <EmailShareButton
@@ -249,80 +192,9 @@ function Share(){
             <EmailIcon size={32} round />
           </EmailShareButton>
         </div>
-        <div className="Demo__some-network">
-          <ViberShareButton
-            url={shareUrl}
-            title={title}
-            className="Demo__some-network__share-button"
-          >
-            <ViberIcon size={32} round />
-          </ViberShareButton>
-        </div>
+ 
+       
 
-        <div className="Demo__some-network">
-          <WorkplaceShareButton
-            url={shareUrl}
-            quote={title}
-            className="Demo__some-network__share-button"
-          >
-            <WorkplaceIcon size={32} round />
-          </WorkplaceShareButton>
-        </div>
-
-        <div className="Demo__some-network">
-          <LineShareButton
-            url={shareUrl}
-            title={title}
-            className="Demo__some-network__share-button"
-          >
-            <LineIcon size={32} round />
-          </LineShareButton>
-        </div>
-
-        <div className="Demo__some-network">
-          <WeiboShareButton
-            url={shareUrl}
-            title={title}
-            image={``}
-            className="Demo__some-network__share-button"
-          >
-            <WeiboIcon size={32} round />
-          </WeiboShareButton>
-        </div>
-
-        <div className="Demo__some-network">
-          <PocketShareButton
-            url={shareUrl}
-            title={title}
-            className="Demo__some-network__share-button"
-          >
-            <PocketIcon size={32} round />
-          </PocketShareButton>
-        </div>
-
-        <div className="Demo__some-network">
-          <InstapaperShareButton
-            url={shareUrl}
-            title={title}
-            className="Demo__some-network__share-button"
-          >
-            <InstapaperIcon size={32} round />
-          </InstapaperShareButton>
-        </div>
-
-        <div className="Demo__some-network">
-          <HatenaShareButton
-            url={shareUrl}
-            title={title}
-            windowWidth={660}
-            windowHeight={460}
-            className="Demo__some-network__share-button"
-          >
-            <HatenaIcon size={32} round />
-          </HatenaShareButton>
-
-         
-        </div>
         </div>
     )
 }
