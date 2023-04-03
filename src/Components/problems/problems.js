@@ -784,4 +784,40 @@ const arr2=arr.map(callback)
     explanation:
       "When we pass the function to the high order function ,we should pass the function name [reference] to the high order function ,not calling the function",
   },
+  {
+    title:
+      "Pass array/object to function [not wrong but have unexpected result]",
+    code: `
+function fun(val,arr,obj){
+  val=val+100;
+  arr[0]=100;
+  obj.a=100;
+}
+
+let val=3
+let arr=[2,3]
+let obj={a:1,b:2}
+
+console.log(val)///3
+console.log(arr)///[2,3]
+console.log(obj)///{a:1,b:2}
+fun(val,arr,obj)
+console.log(val)///3
+console.log(arr)///[100,3]
+console.log(obj)///{a:100,b:2}
+
+
+
+`,
+    tags: [
+      "functions",
+      "passing by reference",
+      "passing by value",
+      "object",
+      "array",
+    ],
+    error: "No error",
+    explanation:
+      "Arrays and Objects are passed by reference ,so modifying the function variable[array,object] has effect on the original [array,object] ,where us literal variables are passed by value so modifying the function variable does not has any effect on the original variable value.",
+  },
 ];
