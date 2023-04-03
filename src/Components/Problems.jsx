@@ -49,7 +49,7 @@ function Problems(){
     const nextPage=()=>{
       if(index<problemsArr.length-1){
         setIndex(index+1)
-        if(index>0 && index%10==0){
+        if(index>0 && (index+2)%10==0){
           setModalShow(true)
         }
       }
