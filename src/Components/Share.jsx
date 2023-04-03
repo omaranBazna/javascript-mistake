@@ -6,47 +6,26 @@ import {
   FacebookMessengerIcon,
   LinkedinShareButton,
   TwitterShareButton,
-  PinterestShareButton,
-  VKShareButton,
-  OKShareButton,
   TelegramShareButton,
   WhatsappShareButton,
   RedditShareButton,
   EmailShareButton,
-  TumblrShareButton,
-  LivejournalShareButton,
-  MailruShareButton,
-  ViberShareButton,
-  WorkplaceShareButton,
-  LineShareButton,
-  WeiboShareButton,
-  PocketShareButton,
-  InstapaperShareButton,
-  HatenaShareButton,
+
+
   FacebookIcon,
   TwitterIcon,
   LinkedinIcon,
-  PinterestIcon,
-  VKIcon,
-  OKIcon,
+ 
   TelegramIcon,
   WhatsappIcon,
   RedditIcon,
-  TumblrIcon,
-  MailruIcon,
+
   EmailIcon,
-  LivejournalIcon,
-  ViberIcon,
-  WorkplaceIcon,
-  LineIcon,
-  PocketIcon,
-  InstapaperIcon,
-  WeiboIcon,
-  HatenaIcon,
+
 } from "react-share"
 
-const shareUrl = 'http://github.com';
-const title = 'GitHub';
+const shareUrl = window.location.href;
+const title = 'JavaScript common mistakes';
 function Share(){
     function fallbackCopyTextToClipboard(text) {
         var textArea = document.createElement("textarea");
