@@ -9,7 +9,7 @@ function Header({setShow}){
 
 
         <h1>Common mistakes in Javascript <Share /> </h1>
-        <h5>By: Omaran Bazna 'coding tutor' <Button onClick={()=>{setShow(true)}} variant="dark">Request tutor</Button></h5>
+        <h5>By: Omaran Bazna 'coding tutor' <Button onClick={()=>{window.open("https://www.codementor.io/@omran4d")}} variant="dark">Request tutor</Button></h5>
         <Socials />
       </div>
     )
