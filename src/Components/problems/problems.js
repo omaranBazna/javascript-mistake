@@ -742,4 +742,31 @@ console.log(sum(1, 2, 3));
     explanation:
       "Arrow functions do not have their own arguments object, and instead use the arguments object of their surrounding lexical scope. In this case, the arrow function sum does not have access to the arguments object of the global scope, resulting in a reference error. To solve this, we can either use a regular function declaration that has its own arguments object.",
   },
+  {
+    title: "Iterate not iterable variable",
+    code: `cont obj={key1:'value1',key2:'value2',key3:'value3'}
+for(let el of obj){//Mistake
+console.log(el)
+}
+/*Correct code*/
+/*to iterate the obj we need to iterate the object keys
+for(let key of Object.keys(obj)){
+  console.log(obj[key])
+}
+`,
+    tags: ["Object", "loops", "iteration"],
+    error: "TypeError: obj is not iterable",
+    explanation: "You can only use iterable variable [arrays] in the for loop ",
+  },
+  {
+    title: "Misuse of 'typeof' operator",
+    code: `console.log( typeof [1,23]=="array") //output false
+console.log( typeof [1,23]=="object")//output true
+console.log( typeof NaN=="NaN")//output false
+console.log( typeof NaN=="number")//output true
+`,
+    tags: ["typeof keyword"],
+    error: "No error",
+    explanation: "typeof NaN is number , typeof array is object",
+  },
 ];
