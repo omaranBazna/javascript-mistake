@@ -805,9 +805,6 @@ fun(val,arr,obj)
 console.log(val)///3
 console.log(arr)///[100,3]
 console.log(obj)///{a:100,b:2}
-
-
-
 `,
     tags: [
       "functions",
@@ -819,5 +816,27 @@ console.log(obj)///{a:100,b:2}
     error: "No error",
     explanation:
       "Arrays and Objects are passed by reference ,so modifying the function variable[array,object] has effect on the original [array,object] ,where us literal variables are passed by value so modifying the function variable does not has any effect on the original variable value.",
+  },
+  {
+    title: "Recursive call without base case",
+    code: `
+function fun(i){
+
+  console.log(i)
+  fun(i-1)///recursive call
+}
+/*correct code*/
+function fun(i){
+if(i==0){///base case
+  return
+}
+  console.log(i)
+  fun(i-1)///recursive call
+}
+`,
+    tags: ["recursion", "stack overflow", "functions"],
+    error: "No error message:infinite for loop lead to stack over flow ",
+    explanation:
+      "When we have a recursive call ,we need to add a base case so we stop the recursive call at some point ,otherwise it will enter an infinite loop of calling.",
   },
 ];
