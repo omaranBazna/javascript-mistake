@@ -42,14 +42,14 @@ function MyVerticallyCenteredModal(props) {
 
 
 function Problems(){
-    const [index,setIndex]=useState(1)
+    const [index,setIndex]=useState(0)
     const [value, setValue] = useState(1);
     const [fontSize,setFontSize]=useState(18)
     const [modalShow, setModalShow] = useState(false);
     const nextPage=()=>{
       if(index<problemsArr.length-1){
         setIndex(index+1)
-        if(index==1){
+        if(index>0 && index%10==0){
           setModalShow(true)
         }
       }
