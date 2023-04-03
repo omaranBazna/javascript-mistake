@@ -41,16 +41,16 @@ function MyVerticallyCenteredModal(props) {
 
 
 
-function Problems(){
+function Problems({show,setShow}){
     const [index,setIndex]=useState(0)
     const [value, setValue] = useState(1);
     const [fontSize,setFontSize]=useState(18)
-    const [modalShow, setModalShow] = useState(false);
+ 
     const nextPage=()=>{
       if(index<problemsArr.length-1){
         setIndex(index+1)
         if(index>0 && (index+2)%10==0){
-          setModalShow(true)
+          setShow(true)
         }
       }
     }
@@ -64,8 +64,8 @@ function Problems(){
              
 
       <MyVerticallyCenteredModal
-        show={modalShow}
-        onHide={() => setModalShow(false)}
+        show={show}
+        onHide={() => setShow(false)}
       />
               <Problem setFontSize={setFontSize} fontSize={fontSize} value={value} setValue={setValue} index={index}  item={problemsArr[index]} />
             
