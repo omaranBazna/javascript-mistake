@@ -769,4 +769,19 @@ console.log( typeof NaN=="number")//output true
     error: "No error",
     explanation: "typeof NaN is number , typeof array is object",
   },
+
+  {
+    title: "Call the callback when passing it to high order function",
+    code: `const callback=item=>2*item
+const arr=[1,2,3,4,5]
+const arr2=arr.map(callback())//wrong code ,we should not call the callback when we pass it to map
+
+/*correct code*/
+const arr2=arr.map(callback)
+`,
+    tags: ["High order functions", "callbacks", "passing functions"],
+    error: "TypeError: NaN is not a function",
+    explanation:
+      "When we pass the function to the high order function ,we should pass the function name [reference] to the high order function ,not calling the function",
+  },
 ];
