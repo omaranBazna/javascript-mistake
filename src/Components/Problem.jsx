@@ -4,7 +4,7 @@ import ToggleButton from 'react-bootstrap/ToggleButton';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
-import { useState } from "react";
+
 function Problem({index,fontSize,setFontSize,item,value ,setValue}){
       if(!item){
         return <h1>Problem missing</h1>
@@ -35,10 +35,10 @@ function Problem({index,fontSize,setFontSize,item,value ,setValue}){
       </DropdownButton>
 
         <ToggleButtonGroup style={{border:"1px solid rgb(200,200,200)"}} type="radio" name="options" value={value} onChange={handleChange}>
-      <ToggleButton variant={value==1?"light":"dark"} name="option1" id="tbg-btn-1" value={1}>
+      <ToggleButton variant={value===1?"light":"dark"} name="option1" id="tbg-btn-1" value={1}>
           <i className="fa-sharp fa-regular fa-sun"></i>
       </ToggleButton>
-      <ToggleButton variant={value==1?"light":"dark"} name="option2" id="tbg-btn-2" value={2}>
+      <ToggleButton variant={value===1?"light":"dark"} name="option2" id="tbg-btn-2" value={2}>
         <i className="fa-solid fa-moon"></i>
       </ToggleButton>
     
@@ -57,7 +57,7 @@ function Problem({index,fontSize,setFontSize,item,value ,setValue}){
      defaultValue={item.code}
      language={"javascript"}
     value={item.code}
-    theme={value==1?"vs-light":"vs-dark"}
+    theme={value===1?"vs-light":"vs-dark"}
     options={{readOnly:true,fontSize:fontSize}}
    /></div>
 
