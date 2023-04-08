@@ -5,8 +5,12 @@ import Button from "react-bootstrap/Button"
 import {Col,Row,Container} from "react-bootstrap"
 import { useState } from "react";
 import Modal from 'react-bootstrap/Modal';
-
+import ReactGA from 'react-ga';
+import { useEffect } from 'react';
 function MyVerticallyCenteredModal(props) {
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
   return (
     <Modal
       {...props}

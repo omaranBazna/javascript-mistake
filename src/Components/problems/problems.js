@@ -5,7 +5,7 @@ export const problemsArr = [
 x=3;`,
     tags: ["variables", "declarations"],
     error: `TypeError: "x" is read-only`,
-    explanation: `Since you declare the variable a with const keyword ,variable a is read only which mean you can change it is value`,
+    explanation: `Since you declare the variable a with const keyword ,variable x is read only which mean you can not change its value`,
   },
   {
     title: "Use variable before the  declaration statement",
