@@ -1,5 +1,5 @@
 # JavaScript Common Coding mistakes for beginners and how to correct it
-<details>
+<details id="readme-top">
   <summary>Table of Contents</summary>
   <ol>
     <li>
@@ -101,7 +101,7 @@ Project [Live demo](https://javascriptmistakes.com/)
 * [Font Awesome](https://fontawesome.com)
 * [React Icons](https://react-icons.github.io/react-icons/search)
 * [React Icons](https://react-icons.github.io/react-icons/search)
-* [@monaco-editor/react]([https://react-icons.github.io/react-icons/search](https://www.npmjs.com/package/@monaco-editor/react))
+* [@monaco-editor/react](https://www.npmjs.com/package/@monaco-editor/react)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
